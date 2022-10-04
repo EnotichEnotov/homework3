@@ -1,31 +1,41 @@
-//Решение не полное, постараюсь до вторника исправить
+/*
 import java.util.Locale;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         int n = in.nextInt();
-        int x = in.nextInt();
-        String str = Integer.toString(n);
-        int[] arr = new int[str.length()-1];
-        for (int i = 0; i <= str.length(); ++i){
-            if (x != n % 10){
-                arr[i] = n %10;
+        int q = 0;
+        int prev = in.nextInt();
+        for (int i = 0; i < n-1; ++i) {
+            if (q > prev) {
+                System.out.print(q + " ");
             }
-            else{
-                System.out.print(n/10);
-                break;
-            }
-            n /= 10;
+            prev = q;
+            q = in.nextInt();
         }
-        for (int i = arr.length-1; i >= 0; --i){
-            if (arr[i]==0) {
-                continue;
-            }
-            System.out.print(arr[i]);
-        }
-
     }
+}
+*/
 
+
+//Номер 3 с массивом
+
+import java.util.Locale;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
+        int n = in.nextInt();
+        int[] ar = new int[n];
+        for (int i = 0; i < n; ++i){
+            ar[i] = in.nextInt();
+        }
+        for (int i = 1; i < n; i++){
+            if (ar[i] > ar[i-1]){
+                System.out.print(ar[i] + " ");
+            }
+        }
+    }
 }
 
