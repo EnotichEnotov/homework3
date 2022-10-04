@@ -1,31 +1,40 @@
-//Решение не полное, постараюсь до вторника исправить
 import java.util.Locale;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         int n = in.nextInt();
-        int x = in.nextInt();
-        String str = Integer.toString(n);
-        int[] arr = new int[str.length()-1];
-        for (int i = 0; i <= str.length(); ++i){
-            if (x != n % 10){
-                arr[i] = n %10;
+        int mx = 0;
+        int q = 0;
+        for (int i = 0; i < n; ++i){
+            q = in.nextInt();
+            if (q > mx){
+                mx = q;
             }
-            else{
-                System.out.print(n/10);
-                break;
-            }
-            n /= 10;
         }
-        for (int i = arr.length-1; i >= 0; --i){
-            if (arr[i]==0) {
-                continue;
-            }
-            System.out.print(arr[i]);
-        }
-
+        System.out.println(mx);
     }
-
 }
+/*
+Номер 3 с массивом
+        import java.util.Locale;
+        import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
+        int n = in.nextInt();
+        int mx = 0;
+        int[] ar = new int[n];
+        for (int i = 0; i < n; ++i){
+            ar[i] = in.nextInt();
 
+        }
+        for (int i = 0; i < n; i++){
+            if (ar[i] > mx){
+                mx = ar[i];
+            }
+        }
+        System.out.println(mx);
+    }
+}
+*/
